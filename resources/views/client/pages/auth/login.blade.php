@@ -1,19 +1,20 @@
 @extends('client.layouts.app')
-@section('title', 'Login')
-@section('description', 'Login to your account to access exclusive features and content.')
-@section('keywords', 'login, user authentication, ecommerce login')
+@section('title', 'Đăng nhập')
+@section('description', 'Đăng nhập vào tài khoản của bạn để truy cập các tính năng và nội dung độc quyền.')
+@section('keywords', 'đăng nhập, xác thực người dùng, đăng nhập cửa hàng sách')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('assets/css/styles_auth.css') }}">
 @endpush
 
 @section('content')
-
     <div class="auth-container d-flex align-items-center justify-content-center py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
                     <div class="auth-card p-4 p-md-5">
+                        <h3 class="auth-title text-center mb-4">Đăng nhập</h3>
+                        
                         <form action="{{ route('login.post') }}" method="post">
                             @csrf
 
@@ -26,8 +27,8 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3 position-relative">
-                                <label for="password" class="form-label color-primary-3">Password</label>
+                            <div class="mb-4 position-relative">
+                                <label for="password" class="form-label color-primary-3">Mật khẩu</label>
                                 <input type="password" class="form-control @error('password') is-invalid @enderror"
                                     name="password" id="password" required>
                                 <button type="button" class="password-toggle" id="togglePassword">
@@ -38,16 +39,11 @@
                                 @enderror
                             </div>
 
-                            <div class="forgot-password">
-                                <a href="{{ route('forgot-password') }}" class="auth-link color-primary-3">Forgot
-                                    Password?</a>
-                            </div>
+                            <button type="submit" class="auth-btn btn w-100">Đăng nhập</button>
 
-                            <button type="submit" class="auth-btn btn w-100">Login</button>
-
-                            <div class="text-center signup-text">
-                                <span>Don't have an account? </span>
-                                <a href="{{ route('register') }}" class="auth-link color-primary-3">Sign up</a>
+                            <div class="text-center signup-text mt-3">
+                                <span>Bạn chưa có tài khoản? </span>
+                                <a href="{{ route('register') }}" class="auth-link color-primary-3">Đăng ký</a>
                             </div>
                         </form>
                     </div>

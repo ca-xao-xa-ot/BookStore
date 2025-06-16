@@ -54,13 +54,11 @@
                     </a>
                 </li>
                 <li class="mt-4">
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a href="{{ route('logout') }}">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Đăng xuất</span>
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                    
                 </li>
             </ul>
         </div>

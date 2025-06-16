@@ -13,11 +13,12 @@ use App\Http\Controllers\Admin\BookController as AdminBookController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Middleware\AdminMiddleware;
 
 // Guest routes
 Route::middleware('guest')->group(function () {
     Route::get('register', [AuthController::class, 'register'])->name('register');
-    Route::post('register', [AuthController::class, 'registerStore'])->name('register.store');
+    Route::post('register', [AuthController::class, 'registerStore'])->name('register.post');
     Route::get('login', [AuthController::class, 'login'])->name('login');
     Route::post('login', [AuthController::class, 'loginStore'])->name('login.post');
     Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
@@ -33,7 +34,7 @@ Route::get('/books/{slug}', [BooksController::class, 'show'])->name('books.show'
 
 // Authenticated routes
 Route::middleware('auth')->group(function () {
-    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     // User account routes
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
@@ -66,7 +67,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Admin routes
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::resource('categories', AdminCategoryController::class);
     Route::resource('books', AdminBookController::class);
