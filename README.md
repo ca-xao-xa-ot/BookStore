@@ -2,8 +2,8 @@
 
 <h1>About us</h1>
 <ul>
-    <a href = 'https://github.com/Khanhs3043' ><li>Nguyễn Thị Thu Giang - 23010871</li></a>
-    <a href = 'https://github.com/nguyendieulinh03' ><li>Ngô Thị Minh Phương - 23012156</li></a>
+    <a href = '' ><li>Nguyễn Thị Thu Giang - 23010871</li></a>
+    <a href = '' ><li>Ngô Thị Minh Phương - 23012156</li></a>
 </ul>
 <p>We're all from PHENIKAA UNIVERSITY</p>
 
