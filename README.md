@@ -1,5 +1,4 @@
-<img src="![freepik-cute-pastel-animal-twitter-header-20250622174103LuHx](https://github.com/user-attachments/assets/e02cc36c-2449-4b82-a659-360cd27e31cf)
-">
+![MyProject Banner](assets/myproject.jpeg)
 <h1>About us</h1>
 <ul>
     <a href = 'https://github.com/Khanhs3043' ><li>Nguyễn Thị Thu Giang - 23010871</li></a>
