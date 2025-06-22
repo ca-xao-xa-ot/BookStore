@@ -1,4 +1,5 @@
-![MyProject Banner](assets/myproject.jpeg)
+![MyProject Banner](https://github.com/ca-xao-xa-ot/BookStore/blob/main/public/assets/images/myproject.jpeg?raw=true)
+
 <h1>About us</h1>
 <ul>
     <a href = 'https://github.com/Khanhs3043' ><li>Nguyễn Thị Thu Giang - 23010871</li></a>
